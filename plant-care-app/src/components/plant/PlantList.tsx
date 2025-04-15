@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePlants } from '../../hooks/usePlants';
+import usePlants from '../../hooks/usePlants';
 import PlantCard from './PlantCard';
 
 const PlantList: React.FC = () => {
