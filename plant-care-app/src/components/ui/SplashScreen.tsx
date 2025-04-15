@@ -52,7 +52,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({
       <h1 className="text-4xl font-passionOne tracking-widest mb-2 text-deep-700">
         <span className="text-teal-500">Water</span>Me!
       </h1>
-      <p className="text-deep-500 text-sm">植物の水やり管理をもっと楽しく</p>
+     
     </div>
   );
 };
