@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
-import { useWateringSchedule } from '../../hooks/useWateringSchedule';
+import React, { useState, useMemo } from 'react';
+import useWateringSchedule from '../../hooks/useWateringSchedule';
 import { useStore } from '@/store';
 import Link from 'next/link';
 
 const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const CalendarView: React.FC = () => {
-  const { wateringSchedule } = useWateringSchedule();
   const { plants } = useStore();
+  const wateringPlantsToday = useWateringSchedule(plants);
   const [currentDate] = useState(new Date());
+
+  // 日付別の水やりスケジュールを作成
+  const wateringSchedule = useMemo(() => {
+    const schedule: Record<string, typeof plants> = {};
+    
+    plants.forEach(plant => {
+      if (!plant.lastWatered) return;
+      
+      const lastWateredDate = new Date(plant.lastWatered);
+      const nextWateringDate = new Date(lastWateredDate);
+      nextWateringDate.setDate(lastWateredDate.getDate() + plant.waterFrequencyDays);
+      
+      const dateString = nextWateringDate.toISOString().split('T')[0];
+      if (!schedule[dateString]) schedule[dateString] = [];
+      schedule[dateString].push(plant);
+    });
+    
+    return schedule;
+  }, [plants]);
 
   // カレンダー表示用の日付配列を生成
   const getDaysInMonth = (year: number, month: number) => {
@@ -46,11 +65,7 @@ const CalendarView: React.FC = () => {
 
   const calendarDays = generateCalendarDays();
   
-  // 選択された日の植物を表示
-  const today = new Date();
-  const todayDateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-  const plantsToWaterToday = wateringSchedule[todayDateString] || [];
-
+  // 今日の水やりが必要な植物を表示
   return (
     <div className="space-y-8">
       <div className="bg-white rounded-xl shadow-sm p-4">
@@ -87,9 +102,9 @@ const CalendarView: React.FC = () => {
       
       <div>
         <h2 className="text-xl font-medium mb-3">今日</h2>
-        {plantsToWaterToday.length > 0 ? (
+        {wateringPlantsToday.length > 0 ? (
           <div className="space-y-3">
-            {plantsToWaterToday.map(plant => (
+            {wateringPlantsToday.map(plant => (
               <div key={plant.id} className="bg-white rounded-xl p-4 shadow-sm flex items-center">
                 <div className="mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

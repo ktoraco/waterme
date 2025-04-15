@@ -1,12 +1,20 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { Quicksand } from 'next/font/google';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Navigation from '../components/layout/Navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useStore } from '@/store';
-import '../styles/globals.css'; // Tailwindの読み込み用
+import '../styles/globals.css';
+
+// Quicksandフォントの設定
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-quicksand',
+});
 
 export default function RootLayout({
   children,
@@ -24,7 +32,7 @@ export default function RootLayout({
   }, [user, authLoading, fetchPlants]);
 
   return (
-    <html lang="ja">
+    <html lang="ja" className={quicksand.variable}>
       <body className="flex flex-col min-h-screen">
         <Header />
         <Navigation />

@@ -32,7 +32,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="px-4 pt-6 pb-24 bg-gray-50 min-h-screen">
+    <div className="px-4 pt-6 pb-24 bg-cream-100 min-h-screen">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-8">WaterMe</h1>
         
