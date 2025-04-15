@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { Passion_One } from 'next/font/google'; // Bebas NeueからPassion Oneに変更
+import React, { useEffect, useState } from 'react';
+import { Passion_One } from 'next/font/google';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Navigation from '../components/layout/Navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useStore } from '@/store';
+import SplashScreen from '@/components/ui/SplashScreen';
 import '../styles/globals.css';
 
 // Passion Oneフォントの設定
@@ -24,6 +25,7 @@ export default function RootLayout({
 }) {
   const { user, loading: authLoading } = useAuth();
   const { fetchPlants } = useStore();
+  const [showSplash, setShowSplash] = useState(true);
 
   // ログインしている場合、Firestoreからデータを取得
   useEffect(() => {
@@ -34,11 +36,19 @@ export default function RootLayout({
 
   return (
     <html lang="ja" className={passionOne.variable}>
-      <body className="flex flex-col min-h-screen">
-        <Header />
-        <Navigation />
-        <main className="flex-grow container mx-auto px-4 py-6">{children}</main>
-        <Footer />
+      <body className="flex flex-col min-h-screen bg-stone-50">
+        {showSplash ? (
+          <SplashScreen onComplete={() => setShowSplash(false)} />
+        ) : (
+          <>
+            <Header />
+            <Navigation />
+            <main className="flex-grow px-4 py-6">
+              <div className="max-w-md mx-auto">{children}</div>
+            </main>
+            <Footer />
+          </>
+        )}
       </body>
     </html>
   );
