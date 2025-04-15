@@ -15,7 +15,7 @@ const PlantsPage = () => {
   
   return (
     <div className="px-4 pt-6 pb-24 bg-stone-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-8">Plants</h1>
+      <h1 className="text-3xl font-bold mb-8">WaterMe!</h1>
       
       {plants.length > 0 ? (
         <div className="space-y-4 flex flex-col">

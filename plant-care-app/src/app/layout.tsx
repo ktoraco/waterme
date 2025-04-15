@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Quicksand } from 'next/font/google';
+import { Passion_One } from 'next/font/google'; // Bebas NeueからPassion Oneに変更
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Navigation from '../components/layout/Navigation';
@@ -9,11 +9,12 @@ import { useAuth } from '@/hooks/useAuth';
 import { useStore } from '@/store';
 import '../styles/globals.css';
 
-// Quicksandフォントの設定
-const quicksand = Quicksand({
+// Passion Oneフォントの設定
+const passionOne = Passion_One({
+  weight: ['400', '700', '900'], // 複数のウェイトを指定 (Regular, Bold, Black)
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-quicksand',
+  variable: '--font-passion-one',
 });
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
   }, [user, authLoading, fetchPlants]);
 
   return (
-    <html lang="ja" className={quicksand.variable}>
+    <html lang="ja" className={passionOne.variable}>
       <body className="flex flex-col min-h-screen">
         <Header />
         <Navigation />
