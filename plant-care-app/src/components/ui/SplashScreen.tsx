@@ -1,8 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+import type { LottieComponentProps } from 'lottie-react';
 import waterAnimationData from '@/animations/water-animation.json';
+
+// Lottieコンポーネントをクライアント側のみで読み込む
+const Lottie = dynamic<LottieComponentProps>(
+  () => import('lottie-react'),
+  { ssr: false } // サーバーサイドレンダリングを無効にする
+);
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -45,6 +52,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({
       <h1 className="text-4xl font-passionOne tracking-widest mb-2 text-deep-700">
         <span className="text-teal-500">Water</span>Me!
       </h1>
+      <p className="text-deep-500 text-sm">植物の水やり管理をもっと楽しく</p>
     </div>
   );
 };
