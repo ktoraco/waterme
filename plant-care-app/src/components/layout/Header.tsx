@@ -8,7 +8,7 @@ const Header: React.FC = () => {
                 <span className="text-deep-700">Water</span>
                 <span className="text-deep-700">Me</span>
             </h1>
-            <nav>
+            <nav className="hidden md:block">
                 <ul className="flex space-x-4 pt-2 text-teal-500 font-medium">
                     <li><Link href="/" className="hover:underline">Home</Link></li>
                     <li><Link href="/calendar" className="hover:underline">Calendar</Link></li>

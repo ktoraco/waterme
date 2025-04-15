@@ -27,8 +27,8 @@ export default function SettingsPage() {
       await signOut();
       router.push('/');
     } catch (error) {
-      console.error('ログアウトに失敗しました', error);
-      alert('ログアウトに失敗しました');
+      console.error('ログアウト失敗です！', error);
+      alert('ログアウト失敗です！');
     }
   };
 
@@ -48,7 +48,7 @@ export default function SettingsPage() {
           </div>
         ) : (
           <div>
-            <p className="mb-4 text-gray-600">
+            <p className="mb-4 text-deep-600">
               ログインするとデータがクラウドに保存され、複数のデバイスで同期できます。
             </p>
             <div className="flex space-x-2">
@@ -62,7 +62,7 @@ export default function SettingsPage() {
       </Card>
 
       <Card title="ユーザープロファイル" className="mb-6">
-        <p className="mb-4 text-gray-600">
+        <p className="mb-4 text-deep-600">
           複数のユーザーで使い分けるためのプロファイルを作成できます。
           プロファイルごとに別々の植物リストが管理されます。
         </p>
@@ -74,19 +74,19 @@ export default function SettingsPage() {
               <li 
                 key={profile.id}
                 className={`p-3 rounded-md cursor-pointer flex justify-between items-center ${
-                  profile.id === activeProfileId ? 'bg-green-100 border-l-4 border-green-500' : 'bg-gray-50'
+                  profile.id === activeProfileId ? 'bg-teal-100 border-l-4 border-teal-500' : 'bg-stone-50'
                 }`}
                 onClick={() => switchProfile(profile.id)}
               >
                 <span className="font-medium">{profile.name}</span>
                 {profile.id === activeProfileId && (
-                  <span className="text-sm text-green-600 font-medium">現在のプロファイル</span>
+                  <span className="text-sm text-teal-600 font-medium">現在のプロファイル</span>
                 )}
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-gray-500 mb-4">まだプロファイルがありません。作成してみましょう。</p>
+          <p className="text-deep-500 mb-4">まだプロファイルがありません。作成してみましょう！</p>
         )}
 
         <form onSubmit={handleAddProfile} className="flex gap-2">
@@ -102,7 +102,7 @@ export default function SettingsPage() {
       </Card>
 
       <Card title="データ管理" className="mb-6">
-        <p className="mb-4 text-gray-600">
+        <p className="mb-4 text-deep-600">
           注意: この操作は元に戻せません。
         </p>
         <Button 

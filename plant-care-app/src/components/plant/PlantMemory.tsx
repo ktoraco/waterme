@@ -45,7 +45,7 @@ const PlantMemory: React.FC<PlantMemoryProps> = ({ memories, onAddMemory }) => {
     <div className="mt-6">
       <h3 className="text-xl font-semibold mb-4">思い出アルバム</h3>
       
-      <form onSubmit={handleSubmit} className="mb-6 p-4 bg-green-50 rounded-lg">
+      <form onSubmit={handleSubmit} className="mb-6 p-4 bg-cream-100 rounded-lg">
         <div className="mb-3">
           <label className="block text-sm font-medium mb-1">メモ</label>
           <textarea 
@@ -73,7 +73,7 @@ const PlantMemory: React.FC<PlantMemoryProps> = ({ memories, onAddMemory }) => {
         
         <button 
           type="submit"
-          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+          className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600"
         >
           記録する
         </button>
@@ -83,7 +83,7 @@ const PlantMemory: React.FC<PlantMemoryProps> = ({ memories, onAddMemory }) => {
         {memories.length > 0 ? (
           memories.map((memory, index) => (
             <div key={index} className="border rounded-lg p-4 bg-white shadow-sm">
-              <div className="text-sm text-gray-500 mb-2">{formatDate(memory.date)}</div>
+              <div className="text-sm text-deep-500 mb-2">{formatDate(memory.date)}</div>
               {memory.imageUrl && (
                 <div className="mb-3">
                   <img 
@@ -93,11 +93,11 @@ const PlantMemory: React.FC<PlantMemoryProps> = ({ memories, onAddMemory }) => {
                   />
                 </div>
               )}
-              {memory.note && <p className="text-gray-800">{memory.note}</p>}
+              {memory.note && <p className="text-deep-800">{memory.note}</p>}
             </div>
           ))
         ) : (
-          <p className="text-gray-500">まだ思い出が記録されていません</p>
+          <p className="text-deep-500">まだ思い出が記録されていません</p>
         )}
       </div>
     </div>
