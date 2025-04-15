@@ -90,7 +90,7 @@ const CalendarView: React.FC = () => {
                   {dayObj.day}
                   {dayObj.hasWatering && (
                     <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-teal-500 h-1.5 w-1.5 rounded-full"></div>
+                      <div className="bg-cyan-500 h-1.5 w-1.5 rounded-full"></div>
                     </div>
                   )}
                 </div>
@@ -101,7 +101,7 @@ const CalendarView: React.FC = () => {
       </div>
       
       <div>
-        <h2 className="text-xl font-medium mb-3">今日</h2>
+        <h2 className="text-xl font-medium mb-3">Today</h2>
         {wateringPlantsToday.length > 0 ? (
           <div className="space-y-3">
             {wateringPlantsToday.map(plant => (

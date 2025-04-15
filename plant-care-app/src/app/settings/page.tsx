@@ -34,9 +34,9 @@ export default function SettingsPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">設定</h1>
+      <h1 className="text-2xl font-bold text-deep-950 mb-6">Settings</h1>
 
-      <Card title="アカウント情報" className="mb-6">
+      <Card title="アカウント情報" className="mb-6 text-deep-950">
         {user ? (
           <div>
             <p className="mb-2">
@@ -52,8 +52,8 @@ export default function SettingsPage() {
               ログインするとデータがクラウドに保存され、複数のデバイスで同期できます。
             </p>
             <div className="flex space-x-2">
-              <a href="/auth/signin" className="btn">ログイン</a>
-              <a href="/auth/signup" className="btn btn-secondary">
+              <a href="/auth/signin" className="btn text-deep-950">ログイン</a>
+              <a href="/auth/signup" className="btn btn-secondary text-deep-950">
                 新規登録
               </a>
             </div>
@@ -61,13 +61,13 @@ export default function SettingsPage() {
         )}
       </Card>
 
-      <Card title="ユーザープロファイル" className="mb-6">
+      <Card title="ユーザープロファイル" className="mb-6 text-deep-950">
         <p className="mb-4 text-deep-600">
           複数のユーザーで使い分けるためのプロファイルを作成できます。
           プロファイルごとに別々の植物リストが管理されます。
         </p>
 
-        <h3 className="font-medium mb-2">プロファイル一覧</h3>
+        <h3 className="font-medium mb-2 text-deep-950">プロファイル一覧</h3>
         {profiles.length > 0 ? (
           <ul className="mb-4 space-y-2">
             {profiles.map(profile => (
@@ -97,11 +97,11 @@ export default function SettingsPage() {
             onChange={(e) => setNewProfileName(e.target.value)}
             className="flex-grow"
           />
-          <Button type="submit" className="mt-0">追加</Button>
+          <Button type="submit" className="mt-0 text-deep-800 font-bold">追加</Button>
         </form>
       </Card>
 
-      <Card title="データ管理" className="mb-6">
+      <Card title="データ管理" className="mb-6 text-deep-950">
         <p className="mb-4 text-deep-600">
           注意: この操作は元に戻せません。
         </p>
