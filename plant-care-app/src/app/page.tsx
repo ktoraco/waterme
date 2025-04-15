@@ -32,7 +32,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="px-4 pt-6 pb-24 bg-stone-100 min-h-screen rounded-xl">
+    <div className="px-4 pt-2 pb-24 bg-stone-100 min-h-screen rounded-xl">
       <div className="mb-8">
         
         {plantsToWaterToday.length > 0 && (
@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
         )}
         
-        <h2 className="text-xl font-semibold mb-4">植物</h2>
+        <h2 className="text-xl font-semibold mb-4 text-deep-950">Plants</h2>
         
         {plants.length > 0 ? (
           <div className="space-y-4 flex flex-col">
@@ -61,7 +61,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium">{plant.name}</h3>
+                    <h3 className="font-medium text-deep-950">{plant.name}</h3>
                     <p className="text-deep-500 text-sm">最終水やり: {getDaysAgo(plant.lastWatered)}日前</p>
                   </div>
                 </div>
