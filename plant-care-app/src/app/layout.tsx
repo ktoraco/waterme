@@ -44,7 +44,7 @@ export default function RootLayout({
             <Header />
             <Navigation />
             <main className="flex-grow px-4 py-6">
-              <div className="max-w-md mx-auto">{children}</div>
+              <div className="max-w-2xl mx-auto">{children}</div>
             </main>
             <Footer />
           </>
