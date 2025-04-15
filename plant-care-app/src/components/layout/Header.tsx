@@ -1,15 +1,19 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
     return (
-        <header className="bg-green-500 p-4 text-white">
-            <h1 className="text-2xl font-bold">Plant Care App</h1>
+        <header className="p-4">
+            <h1 className="text-3xl font-extrabold font-quicksand tracking-wide">
+                <span className="text-deep-700">Water</span>
+                <span className="text-deep-700">Me</span>
+            </h1>
             <nav>
-                <ul className="flex space-x-4">
-                    <li><a href="/" className="hover:underline">Home</a></li>
-                    <li><a href="/calendar" className="hover:underline">Calendar</a></li>
-                    <li><a href="/plant/add" className="hover:underline">Add Plant</a></li>
-                    <li><a href="/settings" className="hover:underline">Settings</a></li>
+                <ul className="flex space-x-4 pt-2 text-teal-500 font-medium">
+                    <li><Link href="/" className="hover:underline">Home</Link></li>
+                    <li><Link href="/calendar" className="hover:underline">Calendar</Link></li>
+                    <li><Link href="/plant/add" className="hover:underline">Add Plant</Link></li>
+                    <li><Link href="/settings" className="hover:underline">Settings</Link></li>
                 </ul>
             </nav>
         </header>

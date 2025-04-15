@@ -7,7 +7,7 @@ const Navigation = () => {
   const pathname = usePathname();
   
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3">
+    <nav className="fixed bottom-0 left-0 right-0 bg-cream-100 border-t border-gray-200 py-3 ">
       <ul className="flex justify-around items-center">
         <li>
           <Link href="/" className={`flex flex-col items-center ${pathname === '/' ? 'text-green-600' : 'text-gray-500'}`}>
@@ -27,7 +27,7 @@ const Navigation = () => {
         </li>
         <li>
           <Link href="/plant/add" className="relative flex items-center justify-center">
-            <div className="absolute rounded-full bg-green-500 p-4">
+            <div className="absolute rounded-full bg-sky-500 p-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
