@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
         )}
         
-        <h2 className="text-xl font-semibold mb-4 text-deep-950">Plants</h2>
+        <h2 className="text-xl font-semibold mb-4 pt-2 text-deep-800">WaterMe!</h2>
         
         {plants.length > 0 ? (
           <div className="space-y-4 flex flex-col">

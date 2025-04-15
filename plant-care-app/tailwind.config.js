@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        quicksand: ['var(--font-quicksand)', 'sans-serif'],
+        // bebasNeueをpassionOneに変更
+        passionOne: ['var(--font-passion-one)', 'sans-serif'],
       },
       colors: {
         // 緑がかったグレーのパレット（#779288を中心に）

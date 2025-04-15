@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Header: React.FC = () => {
     return (
         <header className="p-4">
-            <h1 className="text-3xl font-black font-quicksand tracking-wide">
+            <h1 className="text-3xl font-bold font-passionOne tracking-wide">
                 <span className="text-deep-700">Water</span>
                 <span className="text-deep-700">Me</span>
             </h1>
