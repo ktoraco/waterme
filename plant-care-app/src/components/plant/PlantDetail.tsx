@@ -1,10 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'next/navigation';
 import usePlants from '../../hooks/usePlants';
 import { Plant } from '../../types';
 
 const PlantDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const params = useParams();
+  const id = params?.id as string;
   const { plants } = usePlants();
   const plant: Plant | undefined = plants.find((p) => p.id === id);
 
