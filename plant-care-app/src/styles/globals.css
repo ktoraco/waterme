@@ -19,11 +19,11 @@ body {
 /* Custom Utility Classes */
 @layer components {
   .btn-primary {
-    @apply bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors;
+    @apply bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-colors;
   }
   
   .btn-secondary {
-    @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors;
+    @apply bg-stone-200 text-deep-800 px-4 py-2 rounded-md hover:bg-stone-300 transition-colors;
   }
   
   .card {

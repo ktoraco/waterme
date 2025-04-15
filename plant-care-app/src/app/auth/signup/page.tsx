@@ -80,9 +80,9 @@ export default function SignUpPage() {
         </form>
         
         <div className="mt-4 text-center">
-          <p className="text-gray-600">
+          <p className="text-deep-600">
             すでにアカウントをお持ちの場合は{' '}
-            <Link href="/auth/signin" className="text-green-600 hover:underline">
+            <Link href="/auth/signin" className="text-teal-600 hover:underline">
               ログイン
             </Link>
           </p>

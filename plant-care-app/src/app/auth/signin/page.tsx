@@ -65,9 +65,9 @@ export default function SignInPage() {
         </form>
         
         <div className="mt-4 text-center">
-          <p className="text-gray-600">
+          <p className="text-deep-600">
             アカウントをお持ちでない場合は{' '}
-            <Link href="/auth/signup" className="text-green-600 hover:underline">
+            <Link href="/auth/signup" className="text-teal-600 hover:underline">
               新規登録
             </Link>
           </p>
