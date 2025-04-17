@@ -20,7 +20,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   return (
     <div className="fixed inset-0 bg-deep-50 flex flex-col items-center justify-center z-50">
       {/* 水滴のアニメーション */}
-      <div className="relative">
+      <div className="relative mb-16">  {/* アイコンと文字の間に余白を追加 */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -101,7 +101,6 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
         transition={{ delay: 1.3, duration: 0.5 }}
         className="text-deep-500 mt-2"
       >
-        植物の水やり管理アプリ
       </motion.p>
     </div>
   );
